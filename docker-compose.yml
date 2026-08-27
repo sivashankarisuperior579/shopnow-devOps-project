@@ -1,0 +1,49 @@
+services:
+
+  mongodb:
+    image: mongo:7
+    container_name: shopnow-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - shopnow-network
+
+  backend:
+    build: ./backend
+    container_name: shopnow-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/shopnow
+    depends_on:
+      - mongodb
+    networks:
+      - shopnow-network
+
+  frontend:
+    build: ./frontend
+    container_name: shopnow-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - shopnow-network
+
+  admin:
+    build: ./admin
+    container_name: shopnow-admin
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
+    networks:
+      - shopnow-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  shopnow-network:
