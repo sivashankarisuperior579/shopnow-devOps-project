@@ -410,7 +410,7 @@ const ShopNowApp = () => {
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white p-8 mb-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold mb-4">Welcome to ShopNow</h2>
+            <h2 className="text-3xl font-bold mb-4">Welcome to ShopNow 🚀</h2>
             <p className="text-lg mb-6">Discover amazing products at great prices. Shop with confidence and enjoy fast delivery.</p>
             <button className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition-colors">
               Shop Now
