@@ -18,7 +18,7 @@ const ShopNowApp = () => {
 
   // API base URL - replace with your backend URL
   // API base URL - from environment variable with fallback
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://16.171.153.11:5000';
   // Removed top-level await fetch; products are fetched in fetchProducts()
 
   // Fetch products from backend
